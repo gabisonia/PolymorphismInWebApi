@@ -22,6 +22,8 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
+    var xmlFilename = $"PolymorphismInWebApi.xml";
+    c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
     c.UseOneOfForPolymorphism();
 });
 
